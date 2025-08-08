@@ -1,0 +1,31 @@
+div{
+    width: 400px;
+    height:400px;
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 450px;
+    border: 10px;
+    border-style:dotted;
+    border-radius: 50%;
+    object-fit: cover;
+    color:rgb(122, 143, 143);
+}
+a{
+    text-decoration: none;
+    color: aqua;
+}
+body{
+    background-color: black;
+}
+img{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#arrow{
+    width:80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}

@@ -1,0 +1,504 @@
+/* Designing the nav bar */
+.navBar{
+    margin-right:10%;
+    margin-left: 1%;
+    text-decoration: none;
+    color:white;
+}
+.navBar:hover{
+    border-style: groove;
+    border-color:teal;
+    border-radius: 5px;
+    font-size: large;
+    padding: 1px;
+}
+/* Styling for the header */
+header{
+    background-color: black;
+    height: 39px;
+    width: 100%;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+/* Styling for the website's heading */
+#webHeading{
+    text-align: center;
+    font-family: "Elephant";
+}
+/* Styling for the aimList of HTML */
+#aimList{
+    font-size: larger;
+    font-family:Georgia, Times, 'Times New Roman', serif;
+    color:black;
+}
+/* Styling for the founder informations */
+#founderInfo{
+    text-align: center;
+    font-size:x-large;
+    font-weight:bold;
+    font-style: italic;
+}
+/* Styling founder image */
+#founderImg{
+    color:rgb(71, 71, 226);
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 60px;
+}
+/* Other images of this website */
+.image{
+    border-radius: 10px;
+    width: 440px;
+    height: 300px;
+    object-fit: cover;
+}
+/* Styling for changing mode */
+.dark{
+    background-color: black;
+    #founderInfo{
+        color: greenyellow;
+    }
+    #webHeading{
+        color:aqua ;
+    }
+    #aimList{
+        color:powderblue;
+    }
+    header{
+        background-color: white;
+    }
+    .navBar{
+        color:black;
+        font-size: medium;
+    }
+    #downloadMessage{
+        color:antiquewhite;
+    }
+    #followText{
+        color: rgb(197, 90, 51);
+    }
+    #ejnsa{color:wheat}
+    #novel{color: wheat;}
+    #aboutUs{color: wheat;}
+    transition-duration: 1s;
+}
+.light{
+    background-color: white;
+    transition-duration: 1s;
+}
+/* Styling for Follow links(eg.twitter profile link)&button */
+#followLink{
+    text-align: center;
+    font-size: large;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+#followLink:hover{
+    border-style: solid;
+    border-color:darkgrey;
+}
+/* Styling for the downloadButton */
+.downloadButton{
+    text-align: center;
+    text-decoration:none;
+}
+/* Styling for the ejnsaDownloadButton */
+#ejnsaDownloadButton{
+    width:60px;
+    margin: 0px;
+    border-radius: 30px;
+}
+/* Styling for the search bar */
+#searchInput{
+    margin-left:20px;
+    margin-top: 5px;
+    border-radius: 30px;
+    width: 80%;
+    height: 25px;
+    text-align: center;
+    border-style:ridge;
+    border-color: black;
+    font-size:small;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    gap: 0px;
+    margin-right:-30px;
+}
+#searchButton{
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 3px;
+    color: #000;
+    gap: 0px;
+    width: 20px;
+}
+/* Styling for the contact button*/
+#contactAndHireMeButton{
+    text-decoration: none;
+    font-style: italic;
+    border-style: inherit;
+    background-color: orange;
+    border-radius: 10px;
+    width: 120px;
+    height: 25px;
+}
+#contactAndHireMeButton:hover{
+        cursor:pointer;
+        opacity:0.8;
+}
+/* Styling for the ejnsa & novel & aboutUs*/
+#novaPic{
+    width: 500px;
+    margin-left: 200px;
+}
+#ejnsaPic{
+    width: 400px;
+    border-radius: 20px;
+}
+#novelPic{
+    width: 400px;
+    border-radius: 20px;
+    margin-left: 200px;
+}
+#ejnsa{
+    display: flex;
+    align-items: center;
+    margin-right: 200px;
+    p,h3{
+        margin-left: 200px;
+    }
+    font-size: larger;
+}
+#novel{
+    display: flex;
+    align-items: center;
+    margin-right: 190px;
+    font-size: larger;
+    font-style: italic;
+}
+#aboutUs{
+    display: flex;
+    align-items: center;
+    margin-right: 200px;
+    font-size: larger;
+}
+/* Styling for the sliders*/
+#slider{
+    width: 600px;
+    height: 300px;
+    overflow:hidden;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 350px;
+}
+
+#sliders{
+    display: flex;
+    width: 1800px;
+    animation-name: slide;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+}
+#sliders img {
+    width: 600px;
+}
+
+@keyframes slide{
+    0%{transform: translateX(0px);}
+    33%{transform: translateX(-600px);}
+    66%{transform: translateX(-1200px);}
+    100%{transform: translateX(0)px;}
+}
+
+/* Styling for the window's logo*/
+#windowLogo{
+    border-radius: 15px;
+    margin-top: 150px;
+    width: 440px;
+    height: 300px;
+    object-fit: cover;
+}
+#arrow{
+    width: 100px;
+    animation-name: animation;
+    animation-duration: 2s;
+    animation-delay: 2ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+/* Styling for the dark mode button*/
+#changeMode{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: darkblue;
+    background-color: #000;
+    color: aliceblue;
+}
+#changeMode:hover{
+    cursor: pointer;
+}
+
+/* Styling for footer*/
+footer{
+    background-color: #000;
+    width: 100%;
+    display: inline-flex;
+    border-radius: 10px;
+    a{
+        text-decoration: none;
+    }
+    h4{
+        color: white;
+    }
+    p{
+        color: aliceblue;
+    }
+    #fot1{
+        margin-left: 50px;
+    }
+    #fot2{
+        margin-left: 80px;
+    }
+    p{
+        display: inline-block;
+        margin-top: 125px;
+    }
+}
+
+/*Adding media tag to make is responsive*/
+/*For tablets*/
+@media(max-width:810px){
+    .image{
+        border-radius: 10px;
+        width: 350px;
+        height: 200px;
+        object-fit: cover;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    #sideImg{
+        margin-left: 30px;
+    }
+    #arrow{
+        display: none;
+    }
+    .navBar{
+        margin-right: 5%;
+    }
+    footer{
+        width: 100%;
+        #fot2{
+            margin-left: 30px;
+        }
+    }
+        /* Styling for the ejnsa & novel & aboutUs*/
+    #novaPic{
+        width: 400px;
+        margin-left: 0px;
+    }
+    #ejnsaPic{
+        width: 300px;
+        border-radius: 20px;
+    }
+    #novelPic{
+        width: 300px;
+        border-radius: 20px;
+        align-items: end;
+        margin-left: 1px;
+    }
+    #ejnsa{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        p,h3{
+        margin-left: 20px;
+        }
+        font-size: medium;
+    }
+    #novel{
+        margin-right: 0px;
+        font-size: medium;
+    }
+    #aboutUs{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        font-size: medium;
+    }
+    #slider{
+        display: none;
+    }
+}
+/*For mobile phones*/
+@media(max-width:428px){
+    #slider{
+        display: none;
+    }
+    #webHeading{
+        text-align: center;
+        font-family: "Elephant";
+        font-size: x-large;
+    }
+    .image{
+        border-radius: 10px;
+        width: 190px;
+        height: 100px;
+        object-fit: cover;
+        margin: 0px;
+        padding: 0px;
+        gap:0px;
+    }
+    #sideImg{
+        margin: 0px;
+        padding: 0px;
+        gap:0px;
+    }
+    #windowLogo{
+        border-radius: 15px;
+        margin-top: 150px;
+        width: 300px;
+        height: 250px;
+        object-fit: cover;
+    }
+    #arrow{
+        display: none;
+    }
+    footer{
+        width: 100%;
+        #fot1{
+            margin-left: 0.5px;
+            font-size: smaller;
+        }
+        #fot2{
+            margin-left: 10px;
+            font-size: smaller;
+        }
+        h4{
+            font-size: x-small;
+        }
+        p{
+            font-size: xx-small;
+        }
+        a{
+            font-size: xx-small;
+        }
+    }
+        /* Styling for the ejnsa & novel & aboutUs*/
+    #novaPic{
+        width: 200px;
+        margin-left: 0px;
+    }
+    #ejnsaPic{
+        width: 200px;
+        border-radius: 20px;
+    }
+    #novelPic{
+        width: 200px;
+        border-radius: 20px;
+        align-items: end;
+        margin-left: 1px;
+    }
+    #ejnsa{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        p,h3{
+        margin-left: 20px;
+        }
+        font-size: medium;
+    }
+    #novel{
+        margin-right: 0px;
+        font-size: small;
+    }
+    #aboutUs{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        font-size: medium;
+    }
+
+}
+@media(max-width:384px){
+    #slider{
+        display: none;
+    }
+    #webHeading{
+        text-align: center;
+        font-family: "Elephant";
+        font-size: x-large;
+    }
+    .image{
+        border-radius: 10px;
+        width: 165px;
+        height: 100px;
+        object-fit: cover;
+        margin: 0px;
+        padding: 0px;
+        gap:0px;
+    }
+    #sideImg{
+        margin: 0px;
+        padding: 0px;
+        gap:0px;
+    }
+    #windowLogo{
+        border-radius: 15px;
+        margin-top: 150px;
+        width: 300px;
+        height: 250px;
+        object-fit: cover;
+    }
+    #arrow{
+        display: none;
+    }
+    /* Styling for the ejnsa & novel & aboutUs*/
+    #novaPic{
+        width: 200px;
+        margin-left: 0px;
+    }
+    #ejnsaPic{
+        width: 200px;
+        border-radius: 20px;
+    }
+    #novelPic{
+        width: 200px;
+        border-radius: 20px;
+        align-items: end;
+        margin-left: 1px;
+    }
+    #ejnsa{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        p,h3{
+        margin-left: 20px;
+        }
+        font-size: medium;
+    }
+    #novel{
+        margin-right: 0px;
+        font-size: small;
+    }
+    #aboutUs{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        font-size: medium;
+    }
+
+}
+
+/*Animating website*/
+@keyframes animation{
+    from{
+        margin:1px;
+    }
+    to{
+        margin: 150px;
+    }
+}
