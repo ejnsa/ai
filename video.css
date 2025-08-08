@@ -1,0 +1,28 @@
+/* Designing the nav bar */
+.navBar{
+    margin-right:10%;
+    margin-left: 1%;
+    text-decoration: none;
+    color:white;
+}
+.navBar:hover{
+    border-style: groove;
+    border-color:teal;
+    border-radius: 5px;
+    font-size: large;
+    padding: 1px;
+}
+/* Styling for the header */
+header{
+    background-color: black;
+    height: 39px;
+    width: 100%;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+iframe{
+    width: 500px;
+    height: 300px;
+    margin-left: 50px;
+}

@@ -1,0 +1,48 @@
+/* Designing the nav bar */
+.navBar{
+    margin-right:10%;
+    margin-left: 1%;
+    text-decoration: none;
+    color:white;
+}
+.navBar:hover{
+    border-style: groove;
+    border-color:teal;
+    border-radius: 5px;
+    font-size: large;
+    padding: 1px;
+}
+/* Styling for the header */
+header{
+    background-color: black;
+    height: 39px;
+    width: 100%;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+
+
+.images{
+    border-radius: 5%;
+    border-style: inherit;
+    border-color: aqua;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+body{
+    background-color:black;
+}
+h1{
+    color:cyan;
+    text-align: center;
+    font-size:xx-large;
+    font-style: italic;
+}
+
+@media(max-width:810px){
+    .images{
+        margin-left: 10%;
+        width: 500px;
+    }
+}

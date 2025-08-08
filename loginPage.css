@@ -1,0 +1,38 @@
+.signUpSTARAI{
+    width: 400px;
+    height:400px;
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 450px;
+    border: 10px;
+    border-style:double;
+    border-radius: 50%;
+    object-fit: cover;
+    padding-top: 30px;
+    color: rgb(255, 0, 0);
+}
+#submit{
+    width: 100px;
+    height:30px;
+    border-radius: 30px;
+}
+#name{
+    width: 200px;
+    height:30px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#age{
+    width: 200px;
+    height:30px;
+    border-radius: 10px;
+}
+body{
+    background-color: rgb(235, 4, 81);
+}
+#arrow{
+    width:80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
