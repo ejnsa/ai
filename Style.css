@@ -1,6 +1,6 @@
 /* Designing the nav bar */
 .navBar{
-    margin-right:10%;
+    margin-right:8%;
     margin-left: 1%;
     text-decoration: none;
     color:white;
@@ -502,3 +502,4 @@ footer{
         margin: 150px;
     }
 }
+
