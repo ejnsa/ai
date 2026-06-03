@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJNSA CORTEX | Secure Social Network</title>
+    <style>
+        /* --- DESIGN SYSTEM: DARK TECH --- */
+        :root {
+            --bg: #0a0a0c;
+            --surface: #151518;
+            --accent: #00f2ff;
+            --accent-dim: #007d83;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --card-border: #2d2d34;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg); color: var(--text-main); font-family: 'Inter', system-ui, sans-serif; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: rgba(10, 10, 12, 0.98);
+            padding: 10px 5%;
+            position: sticky; top: 0; z-index: 1000;
+            display: flex; align-items: center; justify-content: space-between;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .brand { font-size: 1.6rem; font-weight: 900; color: var(--accent); letter-spacing: -1px; }
+        .search-bar { 
+            background: #1e1e24; border: 1px solid var(--card-border); 
+            padding: 8px 20px; border-radius: 20px; width: 350px; color: white;
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr 300px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* --- COMPONENTS --- */
+        .card { 
+            background: var(--surface); padding: 20px; border-radius: 12px; 
+            border: 1px solid var(--card-border); margin-bottom: 20px;
+        }
+
+        /* --- FEED POSTS --- */
+        .post-input { 
+            width: 100%; background: #0a0a0c; border: 1px solid var(--card-border); 
+            padding: 15px; border-radius: 8px; color: white; margin-bottom: 10px;
+        }
+        .avatar { width: 45px; height: 45px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), #4f46e5); }
+        
+        .post { background: var(--surface); border-radius: 12px; border: 1px solid var(--card-border); padding: 20px; margin-bottom: 20px; }
+        .post-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .post-content { margin-bottom: 15px; color: var(--text-dim); }
+        .post-image-placeholder { 
+            width: 100%; height: 200px; background: #202025; border-radius: 8px; 
+            display: flex; align-items: center; justify-content: center; color: var(--text-dim); margin-bottom: 15px;
+        }
+        
+        .actions { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; border-top: 1px solid var(--card-border); padding-top: 15px; }
+        .btn-action { 
+            background: transparent; border: none; color: var(--text-dim); 
+            padding: 8px; cursor: pointer; border-radius: 4px; transition: 0.2s;
+        }
+        .btn-action:hover { background: #202025; color: var(--accent); }
+
+        /* --- SIDEBAR LISTS --- */
+        .nav-link { padding: 10px; cursor: pointer; color: var(--text-dim); border-radius: 6px; }
+        .nav-link:hover { background: #202025; color: var(--accent); }
+
+        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } .sidebars { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">CIPHER</div>
+        <input type="text" class="search-bar" placeholder="Search posts, users...">
+        <div class="avatar" style="width: 35px; height: 35px;"></div>
+    </nav>
+
+    <main class="container">
+        <aside class="sidebars">
+            <div class="card">
+                <div class="nav-link">🏠 Home</div>
+                <div class="nav-link">👥 Friends</div>
+                <div class="nav-link">🛡️ Security Groups</div>
+                <div class="nav-link">📡 Live Feed</div>
+            </div>
+        </aside>
+
+        <section>
+            <div class="card">
+                <div style="display: flex; gap: 15px;">
+                    <div class="avatar"></div>
+                    <input id="postInput" type="text" class="post-input" placeholder="What's your update, agent?">
+                    <button id="postButton" type="submit" class="btn-action" style="border:#00f2ff;border-style:solid;width:50px;height: 30px;margin-top:10px;padding-bottom:15px;">Post</button>
+                </div>
+            </div>
+
+            <article class="post">
+                <div class="post-header">
+                    <div class="avatar"></div>
+                    <div><strong>Neon Developer</strong><br><small style="color: var(--accent-dim)">1h ago</small></div>
+                </div>
+                <p class="post-content" id="postShower">Just pushed the latest security patch to the main server. The architecture is looking solid.</p>
+                <div class="post-image-placeholder"><img src="space.jpg" alt="Picture" style="width:495px;height:200px;border-radius:8px;object-fit:cover;"></div>
+                <div class="actions">
+                    <button class="btn-action">Like</button>
+                    <button class="btn-action">Comment</button>
+                    <button class="btn-action">Share</button>
+                </div>
+            </article>
+                        <article class="post">
+                <div class="post-header">
+                    <div class="avatar"></div>
+                    <div><strong>Neon Developer</strong><br><small style="color: var(--accent-dim)">1h ago</small></div>
+                </div>
+                <p class="post-content" id="postShower2">Just pushed the latest security patch to the main server. The architecture is looking solid.</p>
+                <div class="post-image-placeholder"><img src="space.jpg" alt="Picture" style="width:495px;height:200px;border-radius:8px;object-fit:cover;"></div>
+                <div class="actions">
+                    <button class="btn-action">Like</button>
+                    <button class="btn-action">Comment</button>
+                    <button class="btn-action">Share</button>
+                </div>
+            </article>
+                        <article class="post">
+                <div class="post-header">
+                    <div class="avatar"></div>
+                    <div><strong>Neon Developer</strong><br><small style="color: var(--accent-dim)">1h ago</small></div>
+                </div>
+                <p class="post-content" id="postShower3">Just pushed the latest security patch to the main server. The architecture is looking solid.</p>
+                <div class="post-image-placeholder"><img src="space.jpg" alt="Picture" style="width:495px;height:200px;border-radius:8px;object-fit:cover;"></div>
+                <div class="actions">
+                    <button class="btn-action">Like</button>
+                    <button class="btn-action">Comment</button>
+                    <button class="btn-action">Share</button>
+                </div>
+            </article>
+                        <article class="post">
+                <div class="post-header">
+                    <div class="avatar"></div>
+                    <div><strong>Neon Developer</strong><br><small style="color: var(--accent-dim)">1h ago</small></div>
+                </div>
+                <p class="post-content" id="postShower4">Just pushed the latest security patch to the main server. The architecture is looking solid.</p>
+                <div class="post-image-placeholder"><img src="space.jpg" alt="Picture" style="width:495px;height:200px;border-radius:8px;object-fit:cover;"></div>
+                <div class="actions">
+                    <button class="btn-action">Like</button>
+                    <button class="btn-action">Comment</button>
+                    <button class="btn-action">Share</button>
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebars">
+            <div class="card">
+                <h3 style="margin-bottom:15px; color: var(--accent);">Trending Sectors</h3>
+                <div class="nav-link">#CyberSecurity</div>
+                <div class="nav-link">#QuantumComputing</div>
+                <div class="nav-link">#DevOps</div>
+            </div>
+        </aside>
+    </main>
+    <script src="Demo.js"></script>
+
+</body>
+</html>
