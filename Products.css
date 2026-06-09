@@ -21,6 +21,20 @@ header{
     border-radius: 5px;
 }
 
+#contactAndHireMeButton{
+    text-decoration: none;
+    font-style: italic;
+    border-style: inherit;
+    background-color: orange;
+    border-radius: 10px;
+    width: 120px;
+    height: 25px;
+}
+#contactAndHireMeButton:hover{
+        cursor:pointer;
+        opacity:0.8;
+}
+
 
 #ejnsaImage{
     border-radius: 5%;
