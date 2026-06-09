@@ -3,13 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaAI</title>
-    <link rel="stylesheet" href="download.css">
+    <title>NovaAI - Download Matrix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #e6edf3;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .screen-container {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .interface-box {
+            display: flex;
+            background-color: #0a0e14;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Left Visual Panel */
+        .visual-panel {
+            flex: 1;
+            background: radial-gradient(circle at center, #1a232f 0%, #0d1117 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 30px;
+            position: relative;
+            border-right: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .visual-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        /* Logic preservation for your back navigation asset */
+        #arrow {
+            cursor: pointer;
+            filter: drop-shadow(0 0 5px #00f2fe) invert(1);
+            width: 24px;
+            height: auto;
+            transition: transform 0.2s;
+        }
+
+        #arrow:hover {
+            transform: translateX(-3px);
+        }
+
+        /* Space Visual Centerpiece */
+        .galaxy-viz-container {
+            flex: 1;
+            background-image: linear-gradient(rgba(0, 242, 254, 0.05), rgba(124, 45, 155, 0.05)), 
+                              radial-gradient(circle at 30% 20%, #16222f 0%, #0a0e14 70%);
+            border-radius: 12px;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+            position: relative;
+            min-height: 200px;
+        }
+
+        .visual-footer {
+            margin-top: 30px;
+        }
+
+        .progress-dashes {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .dash {
+            width: 20px;
+            height: 3px;
+            background-color: #313a47;
+            border-radius: 2px;
+        }
+
+        .dash.active {
+            background-color: #00f2fe;
+        }
+
+        .visual-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e6edf3;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .visual-subtitle {
+            font-size: 14px;
+            color: #7d8590;
+            line-height: 1.5;
+        }
+
+        /* Right Terminal Panel */
+        .form-panel {
+            flex: 1.1;
+            padding: 40px;
+            background-color: #0a0e14;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-wrapper {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .download-status-badge {
+            display: inline-block;
+            background-color: #161b22;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            color: #00f2fe;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #e6edf3;
+            margin-bottom: 12px;
+        }
+
+        .download-desc {
+            font-size: 14px;
+            color: #8b949e;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Golden Futuristic Action Link & Image Layout */
+        .download-container {
+            width: 100%;
+            border-radius: 12px;
+            padding: 1.5px;
+            background: linear-gradient(135deg, #ffd700, #b59500);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .download-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.35);
+        }
+
+        .download-container:active {
+            transform: translateY(1px);
+        }
+
+        .download-container a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 16px;
+            border-radius: 11px;
+            background-color: #0a0e14;
+            text-decoration: none;
+        }
+
+        /* Overhaul for your native image link button */
+        .download-container img {
+            max-height: 24px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 2px #ffd700);
+        }
+
+        /* System Telemetry Metadata Footer */
+        .system-meta {
+            margin-top: 40px;
+            font-size: 11px;
+            color: #484f58;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Mechanics */
+        @media (max-width: 768px) {
+            .interface-box {
+                flex-direction: column;
+            }
+            .visual-panel {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+                padding: 30px 20px;
+            }
+            .galaxy-viz-container {
+                min-height: 150px;
+                margin-bottom: 15px;
+            }
+            .form-panel {
+                padding: 40px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <img src="blackarrow.png" alt="Arrow" id="arrow">
-    <div>
-        <a href="https://1drv.ms/f/c/9e4036be73543c6b/IgAoAlTkYpL1Q4AqCKNzeAz_AfS3qeio9FfsOifkAXtnDM8?e=hzuEnL"><img src="download.png" alt="Install"></a>
+
+    <div class="screen-container">
+        <div class="interface-box">
+            
+            <div class="visual-panel">
+                <div class="visual-header">
+                    <span style="font-weight: 700; font-size: 18px; color: #00f2fe; letter-spacing: 1px;">NOVA AI</span>
+                    <img src="blackarrow.png" alt="Arrow" id="arrow">
+                </div>
+                
+                <div class="galaxy-viz-container"></div>
+                
+                <div class="visual-footer">
+                    <div class="progress-dashes">
+                        <span class="dash"></span>
+                        <span class="dash active"></span>
+                        <span class="dash"></span>
+                    </div>
+                    <h1 class="visual-title">Core Finalized</h1>
+                    <p class="visual-subtitle">Initialize package installation protocols for deployment context.</p>
+                </div>
+            </div>
+            
+            <div class="form-panel">
+                <div class="form-wrapper">
+                    
+                    <div class="download-status-badge">Package Verified</div>
+                    
+                    <h2 class="form-title">Ready for Installation</h2>
+                    <p class="download-desc">Execute the action interface array block below to sync directory manifests from primary secure nodes.</p>
+                    
+                    <div class="download-container">
+                        <a href="https://onedrive.live.com/?id=%2Fpersonal%2F9e4036be73543c6b%2FDocuments%2FEJNSA">
+                            <img src="download.png" alt="Install">
+                        </a>
+                    </div>
+                    
+                    <div class="system-meta">
+                        Telemetry secure // Architecture Windows-x64
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
     </div>
+
 </body>
 </html>
