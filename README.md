@@ -1,2 +1,2 @@
 # ai
-NovaAI is a website where you will learn about EJNSA.This website will help you with AI.
+i don't like this AI,this is garbage,leave this soon
